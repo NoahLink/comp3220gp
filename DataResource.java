@@ -131,5 +131,33 @@ public class DataResource {
 			System.out.println(fileName);
 		}
 	}
+	
+	public void addExistingDR() {
+		Scanner sc = new Scanner(System.in);
+
+		String dirName = "";
+		String dir = "";
+		boolean b = false;
+		while (!b) {
+			System.out.println("Enter the name of the Existing Data Resource Directory you would like to add: ");
+			dirName = sc.nextLine();
+			System.out.println("Enter the location of the existing directory: ");
+			dir = sc.nextLine();
+			File f = new File(dir);
+			if(f.exists()) {
+				b = true;
+			}else {
+				System.out.println("Data Resource Directory was not added.");
+			}
+		}
+
+		System.out.println("Data Resource Directory successfully added!");
+		// save directory/name
+		this.dirName = dirName;
+		this.dir = dir;
+		this.created = true;
+		
+		this.printDR();
+	}
 
 }

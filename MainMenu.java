@@ -36,7 +36,11 @@ public class MainMenu {
 				
 				break;
 			case 3:
-				System.out.print("you picked 3");
+				if(dr.created == true) {
+					dr.printDR();
+				}else {
+					dr.addExistingDR();
+				}
 				
 				break;
 			case 4:
